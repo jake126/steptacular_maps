@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b1d2fa77eb948da174d85e2fb5ad0798 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b1d2fa77eb948da174d85e2fb5ad0798" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b1d2fa77eb948da174d85e2fb5ad0798 = L.map(
+                "map_b1d2fa77eb948da174d85e2fb5ad0798",
+                {
+                    center: [55.11428791986573, -2.4040707495492697],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b02312b3c9cb41a88eb61f44a438cf83 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b02312b3c9cb41a88eb61f44a438cf83.addTo(map_b1d2fa77eb948da174d85e2fb5ad0798);
+        
+    
+            var marker_12f75a262f79dda6eea73eea3377338e = L.marker(
+                [55.9533, -3.1883],
+                {
+}
+            ).addTo(map_b1d2fa77eb948da174d85e2fb5ad0798);
+        
+    
+            var icon_f72ba0d064ff83441c3ae88ccfd7c78c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_986660433b9911c35d66d0dc4f44f331 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb2fd7b7fac6a74dcef72ffd434948f7 = $(`<div id="html_cb2fd7b7fac6a74dcef72ffd434948f7" style="width: 100.0%; height: 100.0%;">Edinburgh (Start)</div>`)[0];
+                popup_986660433b9911c35d66d0dc4f44f331.setContent(html_cb2fd7b7fac6a74dcef72ffd434948f7);
+            
+        
+
+        marker_12f75a262f79dda6eea73eea3377338e.bindPopup(popup_986660433b9911c35d66d0dc4f44f331)
+        ;
+
+        
+    
+    
+                marker_12f75a262f79dda6eea73eea3377338e.setIcon(icon_f72ba0d064ff83441c3ae88ccfd7c78c);
+            
+    
+            var poly_line_e3f6e62db035f33cb04de50e18240e01 = L.polyline(
+                [[54.3216387017123, -1.6631771236513704], [54.26297216702065, -1.6423853306301375]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_b1d2fa77eb948da174d85e2fb5ad0798);
+        
+    
+            poly_line_e3f6e62db035f33cb04de50e18240e01.bindTooltip(
+                `<div>
+                     Jake Barrett walked 5.9 km since last update
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8d0cc2fa1aada79ae8e96d6c31279b6b = L.marker(
+                [54.26297216702065, -1.6423853306301375],
+                {
+}
+            ).addTo(map_b1d2fa77eb948da174d85e2fb5ad0798);
+        
+    
+        var popup_6f5cf8f0ebd06fb1a31fcaac0793f2ca = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dc6f6243a0fa7504e26c1db54155ea1a = $(`<div id="html_dc6f6243a0fa7504e26c1db54155ea1a" style="width: 100.0%; height: 100.0%;"><b>Jake Barrett</b><br>588,358 steps<br>213.6 km</div>`)[0];
+                popup_6f5cf8f0ebd06fb1a31fcaac0793f2ca.setContent(html_dc6f6243a0fa7504e26c1db54155ea1a);
+            
+        
+
+        marker_8d0cc2fa1aada79ae8e96d6c31279b6b.bindPopup(popup_6f5cf8f0ebd06fb1a31fcaac0793f2ca)
+        ;
+
+        
+    
+    
+            map_b1d2fa77eb948da174d85e2fb5ad0798.fitBounds(
+                [[54.275275839731464, -3.1883], [55.9533, -1.6198414990985397]],
+                {}
+            );
+        
+</script>
+</html>
