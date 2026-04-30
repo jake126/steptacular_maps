@@ -4,7 +4,6 @@ import base64
 import pickle
 from datetime import datetime
 from pathlib import Path
-from typing import Dict
 
 import folium
 import numpy as np
@@ -26,20 +25,13 @@ ED_TO_DOVER_KM = geodesic(EDINBURGH, DOVER).km
 CALAIS_TO_ISTANBUL_KM = geodesic(CALAIS, ISTANBUL).km
 ISTANBUL_TO_KATHMANDU_KM = geodesic(ISTANBUL, KATHMANDU).km
 ENCODED_IMG_FILENAME = "src/img/encoded.json"
-
-
-def load_encoded_imgs() -> Dict[str, str]:
-    with open(ENCODED_IMG_FILENAME, "rb") as f:
-        return pickle.load(f)
+ENCODED_IMG_MAP = dict()
 
 
 def save_encoded_uri_to_file(path_to_png: str, encoded_uri: str) -> None:
     ENCODED_IMG_MAP[path_to_png] = encoded_uri
     with open(ENCODED_IMG_FILENAME, "wb") as f:
         pickle.dump(ENCODED_IMG_MAP, f)
-
-
-ENCODED_IMG_MAP = load_encoded_imgs()
 
 
 def encode_image_as_base64_uri(path_to_png: str | Path) -> str | None:
