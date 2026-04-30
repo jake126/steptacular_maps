@@ -124,7 +124,7 @@ def get_straightline_land_path_destination(dist_km: float) -> tuple[float, float
 def generate_map_from_export(
     export_df: pd.DataFrame,
     output_dir: str | Path,
-    company_icon_path: str | Path = "img/blend.png",
+    company_icon_path: str | Path = "src/img/blend.png",
     output_html_name: str = "steptacular.html",
 ) -> Path:
     output_dir = Path(output_dir)
@@ -239,7 +239,7 @@ def generate_map_from_export(
         ).add_to(map_obj)
         popup_text = f"<b>{row['person']}</b><br>{int(row['no_steps']):,} steps<br>{row['distance_km']:.1f} km"
         if USE_PIC:
-            uri = encode_image_as_base64_uri(f"img/{row['path_to_png']}")
+            uri = encode_image_as_base64_uri(f"src/img/{row['path_to_png']}")
             if uri:
                 icon = folium.CustomIcon(
                     icon_image=uri, icon_size=(30, 40), icon_anchor=(15, 20)
