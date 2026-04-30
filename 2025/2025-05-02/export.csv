@@ -13,8 +13,6 @@ person,Talia Yule,talia.jpg,female,1.7,18845,36413
 person,Alice Hodgson,alice.jpg,female,1.7,18447,32894
 person,Andrew Fyffe,andrew.jpg,male,1.81,6667,13847
 person,Carly Metcalfe,carly.jpg,female,1.65,0,17078
-team,Team 1,team1.jpg,male,1.7,58039,135352
-team,Team 2,team2.jpg,male,1.7,100251,180129
-team,Team 3,team3.jpg,male,1.7,75326,163902
-team,Team 4,team4.jpg,male,1.7,69826,127907
-team,Team 5,team5.jpg,male,1.7,80204,156529
+team,Team 1,team1.png,male,1.7,58039,135352
+team,Team 2,team2.png,male,1.7,100251,180129
+team,Team 3,team3.png,male,1.7,75326,163902
