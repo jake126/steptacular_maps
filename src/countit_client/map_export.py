@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import base64
+import json
+import pickle
 from datetime import datetime
 from pathlib import Path
+from typing import Dict
 
 import folium
 import numpy as np
@@ -23,15 +26,35 @@ DODGE_OFFSET_KM = 2
 ED_TO_DOVER_KM = geodesic(EDINBURGH, DOVER).km
 CALAIS_TO_ISTANBUL_KM = geodesic(CALAIS, ISTANBUL).km
 ISTANBUL_TO_KATHMANDU_KM = geodesic(ISTANBUL, KATHMANDU).km
+ENCODED_IMG_FILENAME = "src/img/encoded.json"
+
+
+def load_encoded_imgs() -> Dict[str, str]:
+    with open(ENCODED_IMG_FILENAME, "rb") as f:
+        data = json.load(f)
+    return data
+
+
+def save_encoded_uri_to_file(path_to_png: str, encoded_uri: str) -> None:
+    ENCODED_IMG_MAP[path_to_png] = encoded_uri
+    with open(ENCODED_IMG_FILENAME, "wb") as f:
+        pickle.dump(ENCODED_IMG_MAP, f)
+
+
+ENCODED_IMG_MAP = load_encoded_imgs()
 
 
 def encode_image_as_base64_uri(path_to_png: str | Path) -> str | None:
+    if path_to_png in ENCODED_IMG_MAP:
+        return ENCODED_IMG_MAP[path_to_png]
     try:
         with open(path_to_png, "rb") as f:
             encoded = base64.b64encode(f.read()).decode("utf-8")
             suffix = Path(path_to_png).suffix.lower()
             mime = "image/png" if suffix == ".png" else "image/jpeg"
-            return f"data:{mime};base64,{encoded}"
+            encoded_uri = f"data:{mime};base64,{encoded}"
+            save_encoded_uri_to_file(path_to_png, encoded_uri)
+            return encoded_uri
     except Exception as exc:
         print(f"Could not load image for marker: {exc}")
         return None
@@ -101,7 +124,7 @@ def get_straightline_land_path_destination(dist_km: float) -> tuple[float, float
 def generate_map_from_export(
     export_df: pd.DataFrame,
     output_dir: str | Path,
-    company_icon_path: str | Path = "blend.png",
+    company_icon_path: str | Path = "img/blend.png",
     output_html_name: str = "steptacular.html",
 ) -> Path:
     output_dir = Path(output_dir)

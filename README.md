@@ -92,7 +92,7 @@ steptacular_maps/
 
 ```bash
 python -m src.countit_client.cli \
-  --selection-csv example_selection.csv \
+  --selection-csv src/selection.csv \
   --skip-git-upload
 ```
 
