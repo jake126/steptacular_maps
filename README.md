@@ -2,7 +2,7 @@
 
 This project pulls selected Count.It people/teams, creates one daily `export.csv` and `steptacular.html` for every day with data, and uploads those files to dated folders in GitHub.
 
-## View maps on web
+## View maps on web
 
 To view the html files, go to the following URL:
 
