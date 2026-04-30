@@ -1,0 +1,18 @@
+EntityType,EntityName,PNG,Gender,Height,01/05/2025,02/05/2025,03/05/2025,04/05/2025,05/05/2025
+person,Jake Barrett,jake.jpeg,male,1.75,21732,46996,69437,92353,113379
+person,Tegan Williams,tegan.jpg,female,1.6,13124,26612,43928,49790,65351
+person,Dervla Brennan,dervla.jpg,female,1.7,21149,42122,51448,68228,84322
+person,Adi Mukherjee,adi.jpg,male,1.78,0,13414,28200,49129,61812
+person,Aparna Asokan,aparna.jpg,female,1.63,41482,74720,113138,148162,182457
+person,Mike Bruce,mike.jpg,male,1.7,19568,26930,36228,36228,57121
+person,Mairi McKinnon,mairi.jpg,female,1.7,21463,45880,72414,85143,106531
+person,Megan Nicolson,megan.jpg,female,1.575,22884,32740,32740,52598,71810
+person,Nikhil Kamerkar,nikhil.jpg,male,1.81,2509,11369,23931,38820,53121
+person,James Smith,james.jpg,male,1.82,0,12598,30139,47164,60187
+person,Talia Yule,talia.jpg,female,1.7,18845,36413,55309,69811,69811
+person,Alice Hodgson,alice.jpg,female,1.7,18447,32894,32894,56921,65958
+person,Andrew Fyffe,andrew.jpg,male,1.81,6667,13847,28122,46706,60388
+person,Carly Metcalfe,carly.jpg,female,1.65,0,17078,37462,51193,64095
+team,Team 1,team1.png,male,1.7,58039,135352,231192,302195,371389
+team,Team 2,team2.png,male,1.7,100251,180129,283539,364267,434776
+team,Team 3,team3.png,male,1.7,75326,163902,227771,310851,391280

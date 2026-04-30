@@ -26,11 +26,11 @@ Edit `config/config.json`:
 {
   "authorization": "Bearer <your token>",
   "challenge_id": "680a51b4db908edfc4fc31a4",
+  "output_dir": "2025",
   "git": {
     "enabled": true,
     "repo_url": "https://github.com/jake126/steptacular_maps.git",
-    "branch": "main",
-    "base_folder": "2026"
+    "branch": "main"
   }
 }
 ```
@@ -38,15 +38,15 @@ Edit `config/config.json`:
 ## Discover IDs
 
 ```bash
-python -m countit_client.discovery --output-dir output
+python -m src.countit_client.discovery
 ```
 
-Use `output/available_people.csv` and `output/available_teams.csv` to fill `example_selection.csv`.
+Use `<output dir>/available_people.csv` and `<output dir>/available_teams.csv` to fill `selection.csv`.
 
 ## Run the full pipeline
 
 ```bash
-python -m countit_client.cli --selection-csv example_selection.csv --output-dir output
+python -m src.countit_client.cli
 ```
 
 By default this uses May 2025 data columns.
@@ -91,9 +91,8 @@ steptacular_maps/
 ## Skip Git upload
 
 ```bash
-python -m countit_client.cli \
+python -m src.countit_client.cli \
   --selection-csv example_selection.csv \
-  --output-dir output \
   --skip-git-upload
 ```
 
