@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import base64
-import json
 import pickle
 from datetime import datetime
 from pathlib import Path
@@ -31,8 +30,7 @@ ENCODED_IMG_FILENAME = "src/img/encoded.json"
 
 def load_encoded_imgs() -> Dict[str, str]:
     with open(ENCODED_IMG_FILENAME, "rb") as f:
-        data = json.load(f)
-    return data
+        return pickle.load(f)
 
 
 def save_encoded_uri_to_file(path_to_png: str, encoded_uri: str) -> None:
