@@ -236,8 +236,8 @@ def generate_map_from_export(
             tooltip=f"{row['person']} walked {row['distance_km'] - row['prev_distance_km']:.1f} km since last update",
         ).add_to(map_obj)
 
-        if row["team"]:
-            popup_text = f"<b>{row['person']}</b><b>{row['team']}</b><br>{int(row['no_steps']):,} steps<br>{row['distance_km']:.1f} km"
+        if str(row["team"]) != "nan" and str(row["team"]) != "":
+            popup_text = f"<b>{row['person']}</b><br><b>{row['team']}</b><br>{int(row['no_steps']):,} steps<br>{row['distance_km']:.1f} km"
         else:
             popup_text = f"<b>{row['person']}</b><br>{int(row['no_steps']):,} steps<br>{row['distance_km']:.1f} km"
 
@@ -245,7 +245,7 @@ def generate_map_from_export(
             uri = encode_image_as_base64_uri(f"src/img/{row['path_to_png']}")
             if uri:
                 icon = folium.CustomIcon(
-                    icon_image=uri, icon_size=(30, 40), icon_anchor=(15, 20)
+                    icon_image=uri, icon_size=(40, 60), icon_anchor=(20, 30)
                 )
                 folium.Marker(
                     location=row["latlon_dodged"],
@@ -278,7 +278,7 @@ def generate_map_from_export(
             uri = encode_image_as_base64_uri(img_path)
             if uri:
                 icon = folium.CustomIcon(
-                    icon_image=uri, icon_size=(30, 40), icon_anchor=(15, 20)
+                    icon_image=uri, icon_size=(50, 50), icon_anchor=(25, 25)
                 )
                 folium.Marker(
                     location=dest,
@@ -304,7 +304,7 @@ def generate_map_from_export(
         uri = encode_image_as_base64_uri(company_icon_path)
         if uri:
             icon = folium.CustomIcon(
-                icon_image=uri, icon_size=(60, 45), icon_anchor=(30, 22)
+                icon_image=uri, icon_size=(60, 30), icon_anchor=(30, 15)
             )
             popup_text = f"<b>Team total</b><br>{int(total_steps):,} steps -- {total_distance_km:.1f} km"
             folium.Marker(
