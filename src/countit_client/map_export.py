@@ -226,15 +226,22 @@ def generate_map_from_export(
         icon=folium.Icon(color="green"),
     ).add_to(map_obj)
 
+    # Create groups
+    grp_people = folium.FeatureGroup(name="People")
+    grp_step_challenge_teams = folium.FeatureGroup(name="Step Challenge Teams")
+    grp_blend_teams = folium.FeatureGroup(name="Blend Teams")
+    grp_combined_people = folium.FeatureGroup(name="Combined People")
+
     # Iterate through people & step challenge teams
     for _, row in input_data.iterrows():
+        group = grp_step_challenge_teams if row["entity_type"] == "team" else grp_people
         folium.PolyLine(
             locations=[row["prev_latlon"], row["latlon_dodged"]],
             color="blue",
             weight=2,
             opacity=0.6,
             tooltip=f"{row['person']} walked {row['distance_km'] - row['prev_distance_km']:.1f} km since last update",
-        ).add_to(map_obj)
+        ).add_to(group)
 
         if str(row["team"]) != "nan" and str(row["team"]) != "":
             popup_text = f"<b>{row['person']}</b><br><b>{row['team']}</b><br>{int(row['no_steps']):,} steps<br>{row['distance_km']:.1f} km"
@@ -253,17 +260,17 @@ def generate_map_from_export(
                     location=row["latlon_dodged"],
                     popup=folium.Popup(popup_text, max_width=300),
                     icon=icon,
-                ).add_to(map_obj)
+                ).add_to(group)
             else:
                 folium.Marker(
                     location=row["latlon_dodged"],
                     popup=folium.Popup(popup_text, max_width=300),
-                ).add_to(map_obj)
+                ).add_to(group)
         else:
             folium.Marker(
                 location=row["latlon_dodged"],
                 popup=folium.Popup(popup_text, max_width=300),
-            ).add_to(map_obj)
+            ).add_to(group)
 
     person_input_data = input_data[input_data["entity_type"] == "person"]
 
@@ -286,17 +293,17 @@ def generate_map_from_export(
                     location=dest,
                     popup=folium.Popup(popup_text, max_width=300),
                     icon=icon,
-                ).add_to(map_obj)
+                ).add_to(grp_blend_teams)
             else:
                 folium.Marker(
                     location=dest,
                     popup=folium.Popup(popup_text, max_width=300),
-                ).add_to(map_obj)
+                ).add_to(grp_blend_teams)
         else:
             folium.Marker(
                 location=dest,
                 popup=folium.Popup(popup_text, max_width=300),
-            ).add_to(map_obj)
+            ).add_to(grp_blend_teams)
 
     # Calculate total
     total_steps = person_input_data["no_steps"].sum()
@@ -313,7 +320,16 @@ def generate_map_from_export(
                 location=team_dest,
                 popup=folium.Popup(popup_text, max_width=250),
                 icon=icon,
-            ).add_to(map_obj)
+            ).add_to(grp_combined_people)
+
+    # add groups to map
+    grp_people.add_to(map_obj)
+    grp_step_challenge_teams.add_to(map_obj)
+    grp_blend_teams.add_to(map_obj)
+    grp_combined_people.add_to(map_obj)
+
+    # add group toggle to map
+    folium.LayerControl(collapsed=False).add_to(map_obj)
 
     map_obj.fit_bounds([[min_lat, min_lon], [max_lat, max_lon]])
     output_path = output_dir / output_html_name
