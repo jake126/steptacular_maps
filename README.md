@@ -51,6 +51,12 @@ python -m src.countit_client.cli
 
 By default this uses May 2025 data columns.
 
+For 2026 data, run:
+
+```bash
+python -m src.countit_client.cli --selection-csv src/selection.csv --export-year 2026
+```
+
 ## What is generated locally
 
 Standard summary files are written to `output/`:
