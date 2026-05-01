@@ -244,8 +244,9 @@ def generate_map_from_export(
         if USE_PIC:
             uri = encode_image_as_base64_uri(f"src/img/{row['path_to_png']}")
             if uri:
+                icon_size = (50, 50) if row["entity_type"] == "team" else (40, 60)
                 icon = folium.CustomIcon(
-                    icon_image=uri, icon_size=(40, 60), icon_anchor=(20, 30)
+                    icon_image=uri, icon_size=icon_size, icon_anchor=(20, 30)
                 )
                 folium.Marker(
                     location=row["latlon_dodged"],
