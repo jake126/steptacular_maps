@@ -1,2 +1,6 @@
-EntityType,EntityName,PNG,Gender,Height,01/05/2025,02/05/2025,03/05/2025,04/05/2025,05/05/2025
-person,Jake Barrett,jake.jpg,male,1.75,21732,46996,69437,92353,113379
+EntityType,EntityName,PNG,Gender,Height,Team,01/05/2025,02/05/2025,03/05/2025,04/05/2025,05/05/2025
+person,Jake Barrett,jake.jpg,male,1.75,DSBI,21732,46996,69437,92353,113379
+person,Adi Mukherjee,adi.jpg,male,1.78,DSBI,0,13414,28200,49129,61812
+person,Mike Bruce,mike.jpg,male,1.7,DE,19568,26930,36228,36228,57121
+person,Nikhil Kamerkar,nikhil.jpg,male,1.81,DE,2509,11369,23931,38820,53121
+team,Team 1,team1.png,male,1.7,nan,58039,135352,231192,302195,371389

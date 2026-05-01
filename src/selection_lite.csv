@@ -1,2 +1,2 @@
-entity_type,entity_name,entity_id,include,png,gender,height,notes
-person,Jake Barrett,68122d4dd26a187871598427,true,jake.jpg,male,1.75,
+entity_type,entity_name,entity_id,include,png,gender,height,team,notes
+person,Jake Barrett,68122d4dd26a187871598427,true,jake.jpg,male,1.75,,

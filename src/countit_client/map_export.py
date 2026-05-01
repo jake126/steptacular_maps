@@ -26,6 +26,13 @@ CALAIS_TO_ISTANBUL_KM = geodesic(CALAIS, ISTANBUL).km
 ISTANBUL_TO_KATHMANDU_KM = geodesic(ISTANBUL, KATHMANDU).km
 ENCODED_IMG_FILENAME = "src/img/encoded.json"
 ENCODED_IMG_MAP = dict()
+TEAMS_PNG_MAP = {
+    "DE": "src/img/de.jpg",
+    "DSBI": "src/img/dsbi.jpg",
+    "Delivery": "src/img/delivery.jpg",
+    "LT": "src/img/lt.jpg",
+    "Ops": "src/img/ops.jpg",
+}
 
 
 def save_encoded_uri_to_file(path_to_png: str, encoded_uri: str) -> None:
@@ -120,10 +127,6 @@ def generate_map_from_export(
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     df = export_df.copy()
-
-    # if "EntityType" in df.columns:
-    #     df = df[df["EntityType"].astype(str).str.lower() == "person"].copy()
-
     if df.empty:
         raise ValueError("Map export requires at least one person row in export.csv.")
 
@@ -136,18 +139,22 @@ def generate_map_from_export(
 
     df = df.rename(
         columns={
+            "EntityType": "entity_type",
             "EntityName": "person",
             "PNG": "path_to_png",
             "Gender": "gender",
             "Height": "height",
+            "Team": "team",
         }
     )
     input_data = pd.DataFrame(
         {
+            "entity_type": df["entity_type"],
             "person": df["person"],
             "path_to_png": df["path_to_png"],
             "gender": df["gender"].astype(str).str.lower(),
             "height": df["height"],
+            "team": df["team"],
             "prev_steps": df[prev_date_str],
             "no_steps": df[latest_date_str],
         }
@@ -219,6 +226,7 @@ def generate_map_from_export(
         icon=folium.Icon(color="green"),
     ).add_to(map_obj)
 
+    # Iterate through people & step challenge teams
     for _, row in input_data.iterrows():
         folium.PolyLine(
             locations=[row["prev_latlon"], row["latlon_dodged"]],
@@ -227,7 +235,12 @@ def generate_map_from_export(
             opacity=0.6,
             tooltip=f"{row['person']} walked {row['distance_km'] - row['prev_distance_km']:.1f} km since last update",
         ).add_to(map_obj)
-        popup_text = f"<b>{row['person']}</b><br>{int(row['no_steps']):,} steps<br>{row['distance_km']:.1f} km"
+
+        if row["team"]:
+            popup_text = f"<b>{row['person']}</b><b>{row['team']}</b><br>{int(row['no_steps']):,} steps<br>{row['distance_km']:.1f} km"
+        else:
+            popup_text = f"<b>{row['person']}</b><br>{int(row['no_steps']):,} steps<br>{row['distance_km']:.1f} km"
+
         if USE_PIC:
             uri = encode_image_as_base64_uri(f"src/img/{row['path_to_png']}")
             if uri:
@@ -250,8 +263,42 @@ def generate_map_from_export(
                 popup=folium.Popup(popup_text, max_width=300),
             ).add_to(map_obj)
 
-    total_steps = input_data["no_steps"].sum()
-    total_distance_km = input_data["distance_km"].sum()
+    person_input_data = input_data[input_data["entity_type"] == "person"]
+
+    # Iterate service lines/teams
+    for team, img_path in TEAMS_PNG_MAP.items():
+        team_input_data = person_input_data[person_input_data["team"] == team]
+        if len(team_input_data) == 0:
+            continue
+        team_steps = team_input_data["no_steps"].mean()
+        team_distance_km = team_input_data["distance_km"].mean()
+        dest = get_straightline_land_path_destination(team_distance_km)
+        popup_text = f"<b>{team} team average</b><br>{int(team_steps):,} steps -- {team_distance_km:.1f} km"
+        if USE_PIC:
+            uri = encode_image_as_base64_uri(img_path)
+            if uri:
+                icon = folium.CustomIcon(
+                    icon_image=uri, icon_size=(30, 40), icon_anchor=(15, 20)
+                )
+                folium.Marker(
+                    location=dest,
+                    popup=folium.Popup(popup_text, max_width=300),
+                    icon=icon,
+                ).add_to(map_obj)
+            else:
+                folium.Marker(
+                    location=dest,
+                    popup=folium.Popup(popup_text, max_width=300),
+                ).add_to(map_obj)
+        else:
+            folium.Marker(
+                location=dest,
+                popup=folium.Popup(popup_text, max_width=300),
+            ).add_to(map_obj)
+
+    # Calculate total
+    total_steps = person_input_data["no_steps"].sum()
+    total_distance_km = person_input_data["distance_km"].sum()
     if SHOW_COMPANY_ICON:
         team_dest = get_straightline_land_path_destination(total_distance_km)
         uri = encode_image_as_base64_uri(company_icon_path)

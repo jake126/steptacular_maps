@@ -4,8 +4,7 @@ from pathlib import Path
 
 import pandas as pd
 
-
-REQUIRED_COLUMNS = {"entity_type", "entity_name", "entity_id", "include"}
+REQUIRED_COLUMNS = {"entity_type", "entity_name", "entity_id", "include", "team"}
 OPTIONAL_COLUMNS = ["png", "gender", "height"]
 
 
@@ -20,7 +19,14 @@ def load_selection_csv(csv_path: str | Path) -> pd.DataFrame:
     cleaned["entity_type"] = cleaned["entity_type"].astype(str).str.strip().str.lower()
     cleaned["entity_name"] = cleaned["entity_name"].astype(str).str.strip()
     cleaned["entity_id"] = cleaned["entity_id"].astype(str).str.strip()
-    cleaned["include"] = cleaned["include"].astype(str).str.strip().str.lower().isin(["true", "1", "yes", "y"])
+    cleaned["team"] = cleaned["team"].astype(str).str.strip()
+    cleaned["include"] = (
+        cleaned["include"]
+        .astype(str)
+        .str.strip()
+        .str.lower()
+        .isin(["true", "1", "yes", "y"])
+    )
 
     for column in OPTIONAL_COLUMNS:
         if column not in cleaned.columns:
@@ -36,7 +42,9 @@ def load_selection_csv(csv_path: str | Path) -> pd.DataFrame:
     return cleaned.reset_index(drop=True)
 
 
-def split_selected_entities(selection_df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+def split_selected_entities(
+    selection_df: pd.DataFrame,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
     return (
         selection_df[selection_df["entity_type"] == "team"].copy(),
         selection_df[selection_df["entity_type"] == "person"].copy(),

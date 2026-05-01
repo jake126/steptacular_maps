@@ -1,0 +1,6 @@
+entity_type,entity_name,entity_id,include,png,gender,height,team,notes
+person,Jake Barrett,68122d4dd26a187871598427,true,jake.jpg,male,1.75,DSBI,
+person,Adi Mukherjee,68122b71d26a18787159829d,true,adi.jpg,male,1.78,DSBI,
+person,Mike Bruce,68121fd9d2ed54640e597df2,true,mike.jpg,male,1.7,DE,
+person,Nikhil Kamerkar,6630f336cac2950001718af8,true,nikhil.jpg,male,1.81,DE,
+team,Team 1,68125e8b3ede7b96a2f19446,true,team1.png,male,1.7,,
