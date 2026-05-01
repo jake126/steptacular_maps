@@ -27,11 +27,11 @@ ISTANBUL_TO_KATHMANDU_KM = geodesic(ISTANBUL, KATHMANDU).km
 ENCODED_IMG_FILENAME = "src/img/encoded.json"
 ENCODED_IMG_MAP = dict()
 TEAMS_PNG_MAP = {
-    "DE": "src/img/de.jpg",
-    "DSBI": "src/img/dsbi.jpg",
-    "Delivery": "src/img/delivery.jpg",
-    "LT": "src/img/lt.jpg",
-    "Ops": "src/img/ops.jpg",
+    "DE": "src/img/de.png",
+    "DSBI": "src/img/dsbi.png",
+    "Delivery": "src/img/delivery.png",
+    "LT": "src/img/lt.png",
+    "Ops": "src/img/ops.png",
 }
 
 
