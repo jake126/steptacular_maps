@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import shutil
 from datetime import date
 from pathlib import Path
 
@@ -82,6 +83,12 @@ def write_daily_outputs(
         generate_map_from_export(export_df=export_df, output_dir=daily_dir)
         daily_dirs[output_date] = daily_dir
         logger.info("Wrote daily export and map for %s", output_date.isoformat())
+
+    # copy the last date into "latest" folder
+    shutil.copytree(
+        daily_dirs[max(export_dates)], config.output_dir / "latest", dirs_exist_ok=True
+    )
+
     return daily_dirs
 
 
