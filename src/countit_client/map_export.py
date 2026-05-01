@@ -245,8 +245,9 @@ def generate_map_from_export(
             uri = encode_image_as_base64_uri(f"src/img/{row['path_to_png']}")
             if uri:
                 icon_size = (50, 50) if row["entity_type"] == "team" else (40, 60)
+                icon_anchor = (25, 25) if row["entity_type"] == "team" else (20, 30)
                 icon = folium.CustomIcon(
-                    icon_image=uri, icon_size=icon_size, icon_anchor=(20, 30)
+                    icon_image=uri, icon_size=icon_size, icon_anchor=icon_anchor
                 )
                 folium.Marker(
                     location=row["latlon_dodged"],
@@ -274,7 +275,7 @@ def generate_map_from_export(
         team_steps = team_input_data["no_steps"].mean()
         team_distance_km = team_input_data["distance_km"].mean()
         dest = get_straightline_land_path_destination(team_distance_km)
-        popup_text = f"<b>{team} team average</b><br>{int(team_steps):,} steps -- {team_distance_km:.1f} km"
+        popup_text = f"<b>{team} team average</b><br>{int(team_steps):,} steps<br>{team_distance_km:.1f} km"
         if USE_PIC:
             uri = encode_image_as_base64_uri(img_path)
             if uri:
@@ -307,7 +308,7 @@ def generate_map_from_export(
             icon = folium.CustomIcon(
                 icon_image=uri, icon_size=(60, 30), icon_anchor=(30, 15)
             )
-            popup_text = f"<b>Team total</b><br>{int(total_steps):,} steps -- {total_distance_km:.1f} km"
+            popup_text = f"<b>Team total</b><br>{int(total_steps):,} steps<br>{total_distance_km:.1f} km"
             folium.Marker(
                 location=team_dest,
                 popup=folium.Popup(popup_text, max_width=250),
