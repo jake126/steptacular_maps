@@ -19,7 +19,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--config-path",
-        default="config/config.json",
+        default="src/config/config.json",
         help="Path to the JSON config file.",
     )
     return parser.parse_args()

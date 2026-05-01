@@ -1,0 +1,10 @@
+{
+  "authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjoiNjYzMTE4MDBjYWMyOTUwMDAxNzE5ODliIiwiZGV2aWNlX2lkIjoiZmIwMDA1OTItNjk2Zi00MjE2LTg5NDAtZTljMDNiODkxMDRiIiwidW5pcXVlX3Nlc3Npb25fa2V5IjoiNWIxNTYyM2MtY2I5ZC00ODllLTgwMzYtMGU4N2EzMTYyZWFhIiwic2Vzc2lvbl90eXBlIjoidXNlciIsImV4cCI6MTc3ODE1MDk3Nn0.CAplTdLTK7gQYKeQP8KloK0f7vfxcIpx3X0dMCs0vq8",
+  "challenge_id": "680a51b4db908edfc4fc31a4",
+  "output_dir": "2025",
+  "git": {
+    "enabled": true,
+    "repo_url": "https://github.com/jake126/steptacular_maps.git",
+    "branch": "main"
+  }
+}

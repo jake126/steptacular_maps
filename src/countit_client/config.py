@@ -13,7 +13,6 @@ class GitConfig:
     enabled: bool = True
     repo_url: str = "https://github.com/jake126/steptacular_maps.git"
     branch: str = "main"
-    base_folder: str = "2025"
 
 
 @dataclass(frozen=True)
