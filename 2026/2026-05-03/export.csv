@@ -1,13 +1,13 @@
 EntityType,EntityName,PNG,Gender,Height,Team,01/05/2026,02/05/2026,03/05/2026
-person,Mike Bruce,mike.jpg,male,1.7,DE,16076,32293,45249
-person,Dervla Brennan,dervla.jpg,female,1.7,Delivery,0,0,0
-person,Adi Mukherjee,adi.jpg,male,1.78,DSBI,13401,26335,39071
-person,Talia Yule,talia.jpg,female,1.7,Ops,12822,33738,39857
-person,Mairi McKinnon,mairi.jpg,female,1.7,DSBI,12786,32131,40207
-person,James Shaw,james.jpg,male,1.82,DE,14248,29095,37237
-person,Jake Barrett,jake.jpg,male,1.75,DSBI,28255,46295,53604
-person,Neil Kirkpatrick,neil.jpg,male,1.8,DE,8449,22988,37499
-team,Edinburgh Team 1,editeam1.png,male,1.75,nan,76217,158418,228608
-team,Edinburgh Team 2,editeam2.png,male,1.75,nan,62631,146072,208416
-team,Edinburgh Team 3,editeam3.png,male,1.75,nan,47962,104494,151196
-team,London Team 1,ldnteam1.png,male,1.75,nan,55521,134085,181001
+person,Mike Bruce,mike.jpg,male,1.7,DE,16076,32293,56833
+person,Dervla Brennan,dervla.jpg,female,1.7,Delivery,23283,42427,59678
+person,Adi Mukherjee,adi.jpg,male,1.78,DSBI,13401,26335,39257
+person,Talia Yule,talia.jpg,female,1.7,Ops,12822,33738,49677
+person,Mairi McKinnon,mairi.jpg,female,1.7,DSBI,12786,32131,45715
+person,James Shaw,james.jpg,male,1.82,DE,14248,29095,41647
+person,Jake Barrett,jake.jpg,male,1.75,DSBI,28255,46295,60927
+person,Neil Kirkpatrick,neil.jpg,male,1.8,DE,8449,22988,38292
+team,Edinburgh Team 1,editeam1.png,male,1.75,nan,76217,158418,257226
+team,Edinburgh Team 2,editeam2.png,male,1.75,nan,85880,187706,291083
+team,Edinburgh Team 3,editeam3.png,male,1.75,nan,47962,104494,169244
+team,London Team 1,ldnteam1.png,male,1.75,nan,55521,134085,183939
