@@ -37,7 +37,7 @@ def commit_and_push_daily_outputs(
     last_date = max(daily_output_dirs).isoformat()
     commit_message = f"Update Steptacular maps {first_date} to {last_date} ({datetime.now().strftime('%Y-%m-%d %H:%M:%S')})"
     run_git(["git", "commit", "-m", commit_message], cwd=Path.cwd())
-    # run_git(["git", "push", "origin", git_config.branch], cwd=Path.cwd())
+    run_git(["git", "push", "origin", git_config.branch], cwd=Path.cwd())
     print(
         f"Uploaded {len(daily_output_dirs)} dated map folder(s) to {git_config.repo_url} on {git_config.branch}."
     )
