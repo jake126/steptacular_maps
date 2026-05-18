@@ -87,11 +87,14 @@ def get_segment_index(latlon: tuple[float, float]) -> int:
     return 1
 
 
-def compute_distance(row: pd.Series, steps_col: str) -> float:
-    multiplier = 0.413 if str(row["gender"]).lower() == "female" else 0.415
-    step_length = (float(row["height"]) * multiplier) / 2
-    return (step_length * float(row[steps_col])) / 1000
+#def compute_distance(row: pd.Series, steps_col: str) -> float:
+#    multiplier = 0.413 if str(row["gender"]).lower() == "female" else 0.415
+#    step_length = (float(row["height"]) * multiplier) / 2
+#    return (step_length * float(row[steps_col])) / 1000
 
+
+def compute_distance(row: pd.Series, steps_col: str) -> float:
+    return (0.75 * float(row[steps_col])) / 1000
 
 def interpolate_point(
     start: tuple[float, float], end: tuple[float, float], fraction: float
