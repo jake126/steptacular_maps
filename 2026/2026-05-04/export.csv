@@ -1,17 +1,17 @@
 EntityType,EntityName,PNG,Gender,Height,Team,01/05/2026,02/05/2026,03/05/2026,04/05/2026
 person,Mike Bruce,mike.jpg,male,1.7,DE,16076,32293,56908,69438
-person,Dervla Brennan,dervla.jpg,female,1.7,Delivery,23283,42427,59678,74843
-person,Adi Mukherjee,adi.jpg,male,1.78,DSBI,13401,26335,26335,41825
+person,Dervla Brennan,dervla.jpg,female,1.7,Delivery,23283,23283,40534,55699
+person,Adi Mukherjee,adi.jpg,male,1.78,DSBI,13401,26335,39257,39257
 person,Talia Yule,talia.jpg,female,1.7,Ops,12822,33738,49677,65998
-person,Mairi McKinnon,mairi.jpg,female,1.7,DSBI,12786,32131,32131,44886
-person,James Shaw,james.jpg,male,1.82,DE,14248,29095,29095,41852
-person,Jake Barrett,jake.jpg,male,1.75,DSBI,28255,46295,60927,88326
-person,Neil Kirkpatrick,neil.jpg,male,1.8,DE,8449,22988,22988,37923
-person,Sam Henderson-Palmer,sam.jpg,male,1.88,DSBI,13820,26790,39610,52534
-person,Andrew Fyffe,andrew.jpg,male,1.81,Ops,0,7351,29126,38863
-person,Carly Metcalfe,carly.jpg,female,1.65,DE,14969,35226,35226,52971
+person,Mairi McKinnon,mairi.jpg,female,1.7,DSBI,12786,32131,45715,45715
+person,James Shaw,james.jpg,male,1.82,DE,14248,29095,41647,41647
+person,Jake Barrett,jake.jpg,male,1.75,DSBI,28255,46295,60927,60927
+person,Neil Kirkpatrick,neil.jpg,male,1.8,DE,8449,22988,38292,53227
+person,Sam Henderson-Palmer,sam.jpg,male,1.88,DSBI,13820,26790,26790,39714
+person,Andrew Fyffe,andrew.jpg,male,1.81,Ops,5547,12898,34673,44410
+person,Carly Metcalfe,carly.jpg,female,1.65,DE,14969,35226,58791,58791
 person,Justine Bwalya,justine.jpg,male,1.79,DE,20546,39587,57480,75798
-team,Edinburgh Team 1,editeam1.png,male,1.75,,68197,150900,235512,325464
-team,Edinburgh Team 2,editeam2.png,male,1.75,,85880,187706,254770,353147
-team,Edinburgh Team 3,editeam3.png,male,1.75,,76751,153976,206412,293193
-team,London Team 1,ldnteam1.png,male,1.75,,72252,171069,221417,285089
+team,Edinburgh Team 1,editeam1.png,male,1.75,,73744,142017,240213,290011
+team,Edinburgh Team 2,editeam2.png,male,1.75,,85880,168562,271939,354141
+team,Edinburgh Team 3,editeam3.png,male,1.75,,76751,166510,255165,295954
+team,London Team 1,ldnteam1.png,male,1.75,,64878,163695,230542,275860
