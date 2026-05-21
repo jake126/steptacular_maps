@@ -1,17 +1,17 @@
 EntityType,EntityName,PNG,Gender,Height,Team,01/05/2026,02/05/2026,03/05/2026
 person,Mike Bruce,mike.jpg,male,1.7,DE,16076,32293,56908
-person,Dervla Brennan,dervla.jpg,female,1.7,Delivery,23283,23283,40534
-person,Adi Mukherjee,adi.jpg,male,1.78,DSBI,13401,26335,39257
+person,Dervla Brennan,dervla.jpg,female,1.7,Delivery,23283,42427,42427
+person,Adi Mukherjee,adi.jpg,male,1.78,DSBI,0,12934,25856
 person,Talia Yule,talia.jpg,female,1.7,Ops,12822,33738,49677
-person,Mairi McKinnon,mairi.jpg,female,1.7,DSBI,12786,32131,45715
-person,James Shaw,james.jpg,male,1.82,DE,14248,29095,41647
-person,Jake Barrett,jake.jpg,male,1.75,DSBI,28255,46295,60927
+person,Mairi McKinnon,mairi.jpg,female,1.7,DSBI,0,19345,32929
+person,James Shaw,james.jpg,male,1.82,DE,0,14847,27399
+person,Jake Barrett,jake.jpg,male,1.75,DSBI,0,18040,32672
 person,Neil Kirkpatrick,neil.jpg,male,1.8,DE,8449,22988,38292
-person,Sam Henderson-Palmer,sam.jpg,male,1.88,DSBI,13820,26790,26790
+person,Sam Henderson-Palmer,sam.jpg,male,1.88,DSBI,13820,26790,39610
 person,Andrew Fyffe,andrew.jpg,male,1.81,Ops,5547,12898,34673
-person,Carly Metcalfe,carly.jpg,female,1.65,DE,14969,35226,58791
+person,Carly Metcalfe,carly.jpg,female,1.65,DE,0,20257,43822
 person,Justine Bwalya,justine.jpg,male,1.79,DE,20546,39587,57480
-team,Edinburgh Team 1,editeam1.png,male,1.75,,73744,142017,240213
-team,Edinburgh Team 2,editeam2.png,male,1.75,,85880,168562,271939
-team,Edinburgh Team 3,editeam3.png,male,1.75,,76751,166510,255165
-team,London Team 1,ldnteam1.png,male,1.75,,64878,163695,230542
+team,Edinburgh Team 1,editeam1.png,male,1.75,,32703,115406,206235
+team,Edinburgh Team 2,editeam2.png,male,1.75,,70531,172357,258483
+team,Edinburgh Team 3,editeam3.png,male,1.75,,34133,123892,225367
+team,London Team 1,ldnteam1.png,male,1.75,,31125,129942,179675
