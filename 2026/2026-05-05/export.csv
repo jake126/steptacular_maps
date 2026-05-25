@@ -1,17 +1,17 @@
 EntityType,EntityName,PNG,Gender,Height,Team,01/05/2026,02/05/2026,03/05/2026,04/05/2026,05/05/2026
-person,Mike Bruce,mike.jpg,male,1.7,DE,16076,32293,56908,69438,84919
-person,Dervla Brennan,dervla.jpg,female,1.7,Delivery,23283,42427,42427,57592,70853
-person,Adi Mukherjee,adi.jpg,male,1.78,DSBI,0,12934,25856,41346,54350
+person,Mike Bruce,mike.jpg,male,1.7,DE,16076,32293,32293,44823,60304
+person,Dervla Brennan,dervla.jpg,female,1.7,Delivery,23283,23283,40534,55699,68960
+person,Adi Mukherjee,adi.jpg,male,1.78,DSBI,13401,26335,39257,54747,54747
 person,Talia Yule,talia.jpg,female,1.7,Ops,12822,33738,49677,65998,84016
-person,Mairi McKinnon,mairi.jpg,female,1.7,DSBI,0,19345,32929,45684,62927
-person,James Shaw,james.jpg,male,1.82,DE,0,14847,27399,40156,53271
-person,Jake Barrett,jake.jpg,male,1.75,DSBI,0,18040,32672,60071,76887
-person,Neil Kirkpatrick,neil.jpg,male,1.8,DE,8449,22988,38292,53227,73604
-person,Sam Henderson-Palmer,sam.jpg,male,1.88,DSBI,13820,26790,39610,52534,52534
-person,Andrew Fyffe,andrew.jpg,male,1.81,Ops,5547,12898,34673,34673,48736
-person,Carly Metcalfe,carly.jpg,female,1.65,DE,0,20257,43822,61567,78650
-person,Justine Bwalya,justine.jpg,male,1.79,DE,20546,39587,57480,57480,72281
-team,Edinburgh Team 1,editeam1.png,male,1.75,,32703,115406,206235,268132,345662
-team,Edinburgh Team 2,editeam2.png,male,1.75,,70531,172357,258483,356860,442386
-team,Edinburgh Team 3,editeam3.png,male,1.75,,34133,123892,225367,312148,370831
-team,London Team 1,ldnteam1.png,male,1.75,,31125,129942,179675,243347,325095
+person,Mairi McKinnon,mairi.jpg,female,1.7,DSBI,12786,32131,45715,58470,75713
+person,James Shaw,james.jpg,male,1.82,DE,14248,29095,41647,54404,54404
+person,Jake Barrett,jake.jpg,male,1.75,DSBI,28255,46295,60927,60927,77743
+person,Neil Kirkpatrick,neil.jpg,male,1.8,DE,8449,22988,38292,53227,53227
+person,Sam Henderson-Palmer,sam.jpg,male,1.88,DSBI,13820,26790,39610,39610,52804
+person,Andrew Fyffe,andrew.jpg,male,1.81,Ops,5547,5547,27322,37059,51122
+person,Carly Metcalfe,carly.jpg,female,1.65,DE,14969,35226,58791,76536,76536
+person,Justine Bwalya,justine.jpg,male,1.79,DE,20546,39587,57480,75798,90599
+team,Edinburgh Team 1,editeam1.png,male,1.75,,70728,146080,244276,306829,384359
+team,Edinburgh Team 2,editeam2.png,male,1.75,,85880,168562,257627,337161,389093
+team,Edinburgh Team 3,editeam3.png,male,1.75,,76751,166510,243370,301892,347792
+team,London Team 1,ldnteam1.png,male,1.75,,72252,171069,237916,301588,339136
